@@ -16,7 +16,7 @@ channels:
   - channelName: mychannel
     # the chaincodeIDs of all the fabric chaincodes in caliper-benchmarks
     contracts:
-    - id: performance-go
+    - id: supplychain-chaincode
 
 organizations:
   - mspid: Org1MSP

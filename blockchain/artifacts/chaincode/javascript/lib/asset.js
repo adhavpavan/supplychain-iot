@@ -60,9 +60,9 @@ class Asset extends Contract {
           shipmentJSON?.shipmentCondition.maxTemperature < eventJSON.value ){
 
             let incident = {
-              "id": 'Incident:'+shipmentJSON.id+eventJSON.id,
-              docType:'Incident',
-              shipmentId:shipment.id,
+              "id": 'Incident:'+shipmentJSON.id+'-' +eventJSON.id,
+              docType:'INCIDENT',
+              shipmentId:shipmentJSON.id,
               eventId:eventJSON.id,
               data:{
                   value: eventJSON.value,
@@ -255,6 +255,20 @@ class Asset extends Contract {
       return new Error(err.stack);
     }
   }
+
+  async CreateAssetTape(ctx, id, color, size, owner, appraisedValue) {
+    console.log("----Create Asset with id-", id)
+    const asset = {
+        ID: id,
+        Color: color,
+        Size: size,
+        Owner: owner,
+        AppraisedValue: appraisedValue,
+    };
+    // we insert data in alphabetic order using 'json-stringify-deterministic' and 'sort-keys-recursive'
+    await ctx.stub.putState(id, Buffer.from(JSON.stringify(asset)));
+    return JSON.stringify(asset);
+}
 
   async getDataWithPagination(ctx, queryString, pageSize, bookmark) {
     try {

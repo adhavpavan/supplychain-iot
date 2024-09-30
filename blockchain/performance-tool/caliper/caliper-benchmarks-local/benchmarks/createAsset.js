@@ -23,40 +23,26 @@ class CreateDeviceWorkload extends WorkloadModuleBase {
         let id = uuidv4()
         assetIdArray.push(id)
 
+        // Generate random number between -10 and 10
+        const randomValue = Math.floor(Math.random() * 21) - 10;
+
         let assetData = {
-            id: id,
-            Color: "White",
-            Size: "Large",
-            Owner: "Pavan",
-            AppraisedValue: "2000000",
+            deviceID: "DEVICE-TEMP12345",
+            id,
+            shipmentId: "Shipment-8da2dfd3-956",
+            type: "Temperature",
+            value: randomValue
         };
 
-
         let args = {
-            contractId: 'performance',
+            contractId: 'supplychain-chaincode',
             contractVersion: 'v1',
-            contractFunction: 'CreateAsset',
-            contractArguments: [JSON.stringify(assetData)],
+            contractFunction: 'AddIOTEvent',
+            contractArguments: [JSON.stringify(assetData), 'Shipment-8da2dfd3-956'],
             // invokerIdentity: 'client0.org2.example.com',
             // transientMap
             timeout: 30
         };
-
-        // const contractRequest = {
-        //     contractId: "myContractID",  // Required. Matches the contract ID in the network configuration file.
-        //     contractFunction: "createAsset",  // Required. Function name in the contract to be called.
-        //     contractArguments: ["asset001","blue","500","Tom"],
-        //     readOnly: false,  // Optional. Set to true for query, false for a transaction (defaults to false).
-        //     transientMap: {},
-        //     invokerIdentity: "User1@org1.example.com",  // Optional. Name of the user invoking the contract.
-        //     invokerMspId: "Org1MSP",  // Optional. MSP ID of the user's organization.
-        //     targetPeers: [ "peer0.org1.example.com","peer0.org2.example.com"],
-        //     targetOrganizations: ["Org1","Org2"],
-        //     channel: "mychannel",  // Optional. The name of the channel on which the contract resides.
-        //     timeout: 30,  // Optional. Timeout in seconds for the request.
-        //     orderer: "orderer.example.com"  // Optional. The target orderer for transaction broadcast.
-        //   };
-
         await this.sutAdapter.sendRequests(args);
     }
 }

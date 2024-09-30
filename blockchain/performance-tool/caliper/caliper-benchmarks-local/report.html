@@ -128,21 +128,19 @@
                 <li>DLT: &nbsp<span style="font-weight: 500;">fabric</span></li>
                 <li>Name: &nbsp<span style="font-weight: 500;">Hyperledger Fabric v2.5.9 - Benchmark network</span></li>
                 <li>Description: &nbsp<span style="font-weight: 500;"></span></li>
-                <li>Benchmark Rounds: &nbsp<span style="font-weight: 500;">4</span></li>
+                <li>Benchmark Rounds: &nbsp<span style="font-weight: 500;">2</span></li>
                 <li><a href="#benchmarkInfo">Details</a></li>
             </ul>
             <ul>
                 <h3>&nbspBenchmark results</h3>
                 <li><a href="#benchmarksummary">Summary</a></li>
-                    <li><a href="#Create Asset - Fix Rate - Node Chaincode">Create Asset - Fix Rate - Node Chaincode</a></li>
-                    <li><a href="#Create Asset Go Chaincode - Fix  Rate">Create Asset Go Chaincode - Fix  Rate</a></li>
+                    <li><a href="#Create Asset - Validation Round">Create Asset - Validation Round</a></li>
                     <li><a href="#Query Asset - Node chaincode">Query Asset - Node chaincode</a></li>
-                    <li><a href="#Query Asset - Go Chaincode">Query Asset - Go Chaincode</a></li>
             </ul>
             <ul>
                 <h3>&nbspSystem under test</h3>
-                <li>Version: &nbsp<span style="font-weight: 500;">2.5.9</span></li>
-                <li>Size: &nbsp<span style="font-weight: 500;">3 Orgs with 1 Peer</span></li>
+                <li>Version: &nbsp<span style="font-weight: 500;">2.1.0</span></li>
+                <li>Size: &nbsp<span style="font-weight: 500;">2 Orgs with 1 Peer</span></li>
                 <li>Orderer: &nbsp<span style="font-weight: 500;">Raft</span></li>
                 <li>Distribution: &nbsp<span style="font-weight: 500;">Single Host</span></li>
                 <li>StateDB: &nbsp<span style="font-weight: 500;">CouchDB</span></li>
@@ -160,57 +158,31 @@
                     </tr>
 
                     <tr>
-                         <td>Create Asset - Fix Rate - Node Chaincode</td> <td>3000</td> <td>0</td> <td>803.2</td> <td>9.49</td> <td>5.80</td> <td>7.95</td> <td>296.6</td>
+                         <td>Create Asset - Validation Round</td> <td>5</td> <td>0</td> <td>500.0</td> <td>2.25</td> <td>2.24</td> <td>2.24</td> <td>2.2</td>
                     </tr>
                     <tr>
-                         <td>Create Asset Go Chaincode - Fix  Rate</td> <td>3000</td> <td>0</td> <td>824.6</td> <td>3.58</td> <td>0.39</td> <td>2.56</td> <td>648.5</td>
-                    </tr>
-                    <tr>
-                         <td>Query Asset - Node chaincode</td> <td>10000</td> <td>0</td> <td>1520.0</td> <td>19.95</td> <td>6.64</td> <td>15.82</td> <td>485.5</td>
-                    </tr>
-                    <tr>
-                         <td>Query Asset - Go Chaincode</td> <td>16000</td> <td>0</td> <td>1701.4</td> <td>1.39</td> <td>0.00</td> <td>0.21</td> <td>1700.9</td>
+                         <td>Query Asset - Node chaincode</td> <td>5</td> <td>0</td> <td>1000.0</td> <td>0.07</td> <td>0.07</td> <td>0.07</td> <td>68.5</td>
                     </tr>
                 </table>
             </div>
-            <div style="border-bottom: 1px solid #d9d9d9; padding-bottom: 10px;" id="Create Asset - Fix Rate - Node Chaincode">
-                <h2>Benchmark round: Create Asset - Fix Rate - Node Chaincode</h2>
+            <div style="border-bottom: 1px solid #d9d9d9; padding-bottom: 10px;" id="Create Asset - Validation Round">
+                <h2>Benchmark round: Create Asset - Validation Round</h2>
                 <p></p>
                 <pre style="overflow: visible;white-space: pre-wrap;max-height:100%;">rateControl:
   type: fixed-rate
   opts:
-    tps: 800
+    tps: 1
 </pre>
-                        <h3>Performance metrics for Create Asset - Fix Rate - Node Chaincode</h3>
+                        <h3>Performance metrics for Create Asset - Validation Round</h3>
                             <table style="min-width: 100%;">
                                 <tr>
                                      <th>Name</th> <th>Succ</th> <th>Fail</th> <th>Send Rate (TPS)</th> <th>Max Latency (s)</th> <th>Min Latency (s)</th> <th>Avg Latency (s)</th> <th>Throughput (TPS)</th>
                                 </tr>
                                 <tr>
-                                     <td>Create Asset - Fix Rate - Node Chaincode</td> <td>3000</td> <td>0</td> <td>803.2</td> <td>9.49</td> <td>5.80</td> <td>7.95</td> <td>296.6</td>
+                                     <td>Create Asset - Validation Round</td> <td>5</td> <td>0</td> <td>500.0</td> <td>2.25</td> <td>2.24</td> <td>2.24</td> <td>2.2</td>
                                 </tr>
                             </table>
-                        <h3>Resource utilization for Create Asset - Fix Rate - Node Chaincode</h3>
-            </div>
-
-            <div style="border-bottom: 1px solid #d9d9d9; padding-bottom: 10px;" id="Create Asset Go Chaincode - Fix  Rate">
-                <h2>Benchmark round: Create Asset Go Chaincode - Fix  Rate</h2>
-                <p></p>
-                <pre style="overflow: visible;white-space: pre-wrap;max-height:100%;">rateControl:
-  type: fixed-rate
-  opts:
-    tps: 1100
-</pre>
-                        <h3>Performance metrics for Create Asset Go Chaincode - Fix  Rate</h3>
-                            <table style="min-width: 100%;">
-                                <tr>
-                                     <th>Name</th> <th>Succ</th> <th>Fail</th> <th>Send Rate (TPS)</th> <th>Max Latency (s)</th> <th>Min Latency (s)</th> <th>Avg Latency (s)</th> <th>Throughput (TPS)</th>
-                                </tr>
-                                <tr>
-                                     <td>Create Asset Go Chaincode - Fix  Rate</td> <td>3000</td> <td>0</td> <td>824.6</td> <td>3.58</td> <td>0.39</td> <td>2.56</td> <td>648.5</td>
-                                </tr>
-                            </table>
-                        <h3>Resource utilization for Create Asset Go Chaincode - Fix  Rate</h3>
+                        <h3>Resource utilization for Create Asset - Validation Round</h3>
             </div>
 
             <div style="border-bottom: 1px solid #d9d9d9; padding-bottom: 10px;" id="Query Asset - Node chaincode">
@@ -219,7 +191,7 @@
                 <pre style="overflow: visible;white-space: pre-wrap;max-height:100%;">rateControl:
   type: fixed-rate
   opts:
-    tps: 2000
+    tps: 1
 </pre>
                         <h3>Performance metrics for Query Asset - Node chaincode</h3>
                             <table style="min-width: 100%;">
@@ -227,30 +199,10 @@
                                      <th>Name</th> <th>Succ</th> <th>Fail</th> <th>Send Rate (TPS)</th> <th>Max Latency (s)</th> <th>Min Latency (s)</th> <th>Avg Latency (s)</th> <th>Throughput (TPS)</th>
                                 </tr>
                                 <tr>
-                                     <td>Query Asset - Node chaincode</td> <td>10000</td> <td>0</td> <td>1520.0</td> <td>19.95</td> <td>6.64</td> <td>15.82</td> <td>485.5</td>
+                                     <td>Query Asset - Node chaincode</td> <td>5</td> <td>0</td> <td>1000.0</td> <td>0.07</td> <td>0.07</td> <td>0.07</td> <td>68.5</td>
                                 </tr>
                             </table>
                         <h3>Resource utilization for Query Asset - Node chaincode</h3>
-            </div>
-
-            <div style="border-bottom: 1px solid #d9d9d9; padding-bottom: 10px;" id="Query Asset - Go Chaincode">
-                <h2>Benchmark round: Query Asset - Go Chaincode</h2>
-                <p>Get Asset.</p>
-                <pre style="overflow: visible;white-space: pre-wrap;max-height:100%;">rateControl:
-  type: fixed-rate
-  opts:
-    tps: 4000
-</pre>
-                        <h3>Performance metrics for Query Asset - Go Chaincode</h3>
-                            <table style="min-width: 100%;">
-                                <tr>
-                                     <th>Name</th> <th>Succ</th> <th>Fail</th> <th>Send Rate (TPS)</th> <th>Max Latency (s)</th> <th>Min Latency (s)</th> <th>Avg Latency (s)</th> <th>Throughput (TPS)</th>
-                                </tr>
-                                <tr>
-                                     <td>Query Asset - Go Chaincode</td> <td>16000</td> <td>0</td> <td>1701.4</td> <td>1.39</td> <td>0.00</td> <td>0.21</td> <td>1700.9</td>
-                                </tr>
-                            </table>
-                        <h3>Resource utilization for Query Asset - Go Chaincode</h3>
             </div>
 
             <div style="border-bottom: 1px solid #d9d9d9; padding-bottom: 10px;">
@@ -259,42 +211,25 @@
                 <pre id="benchmarkInfo" style="overflow: visible;white-space: pre-wrap;max-height:100%;">name: Hyperledger Fabric v2.5.9 - Benchmark network
 workers:
   type: local
-  number: 10
+  number: 5
 rounds:
-  - label: Create Asset - Fix Rate - Node Chaincode
-    txNumber: 3000
+  - label: Create Asset - Validation Round
+    txNumber: 1
     rateControl:
       type: fixed-rate
       opts:
-        tps: 800
+        tps: 1
     workload:
       module: benchmarks&#x2F;createAsset.js
-  - label: Create Asset Go Chaincode - Fix  Rate
-    txNumber: 3000
-    rateControl:
-      type: fixed-rate
-      opts:
-        tps: 1100
-    workload:
-      module: benchmarks&#x2F;createAssetGo.js
   - label: Query Asset - Node chaincode
     description: Get Asset.
-    txNumber: 10000
+    txNumber: 1
     rateControl:
       type: fixed-rate
       opts:
-        tps: 2000
+        tps: 1
     workload:
       module: benchmarks&#x2F;queryAsset.js
-  - label: Query Asset - Go Chaincode
-    description: Get Asset.
-    txNumber: 16000
-    rateControl:
-      type: fixed-rate
-      opts:
-        tps: 4000
-    workload:
-      module: benchmarks&#x2F;queryAssetGo.js
 </pre>
                 <h3>SUT</h3>
                 <pre id="sutdetails">not provided</pre>

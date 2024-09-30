@@ -45,7 +45,7 @@ class QueryDeviceWorkload extends WorkloadModuleBase {
         let assetId= assetIdArray[randomIndex]
         console.log("-----------------------------------", assetId)
         let args = {
-            contractId: 'performance',
+            contractId: 'supplychain-chaincode',
             contractVersion: 'v1',
             contractFunction: 'getAssetByID',
             contractArguments: [assetId],

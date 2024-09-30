@@ -11,11 +11,11 @@ peer2: &peer2
   org: org2
   tls_ca_cert: ../../artifacts/channel/crypto-config/peerOrganizations/org1.example.com/msp/tlscacerts/ca.crt
 
-# peer3: &peer3
-#   addr: localhost:11051
-#   ssl_target_name_override: peer0.org3.example.com
-#   org: org3
-#   tls_ca_cert: ../../artifacts/channel/crypto-config/peerOrganizations/org1.example.com/msp/tlscacerts/ca.crt
+peer3: &peer3
+  addr: localhost:11051
+  ssl_target_name_override: peer0.org3.example.com
+  org: org3
+  tls_ca_cert: ../../artifacts/channel/crypto-config/peerOrganizations/org1.example.com/msp/tlscacerts/ca.crt
 
 # peer2: &peer2
 #   addr: localhost:9051
@@ -27,37 +27,17 @@ orderer: &orderer
   org: org1
   tls_ca_cert: ../../artifacts/channel/crypto-config/ordererOrganizations/example.com/msp/tlscacerts/tlsca.example.com-cert.pem
 
-# orderer2: &orderer2
-#   addr: localhost:8050
-#   ssl_target_name_override: orderer2.example.com
-#   org: org1
-#   tls_ca_cert: ../../artifacts/channel/crypto-config/ordererOrganizations/example.com/msp/tlscacerts/tlsca.example.com-cert.pem
-
-# orderer3: &orderer3
-#   addr: localhost:9050
-#   ssl_target_name_override: orderer3.example.com
-#   org: org1
-#   tls_ca_cert: ../../artifacts/channel/crypto-config/ordererOrganizations/example.com/msp/tlscacerts/tlsca.example.com-cert.pem
-
-# orderer1: &orderer1
-#   addr: localhost:8050
-#   tls_ca_cert: ../../artifacts/channel/crypto-config/ordererOrganizations/example.com/msp/tlscacerts/tlsca.example.com-cert.pem
-
-# orderer1: &orderer1
-#   addr: localhost:9050
-#   tls_ca_cert: ../../artifacts/channel/crypto-config/ordererOrganizations/example.com/msp/tlscacerts/tlsca.example.com-cert.pem
-
 # Peer Nodes to interact with as endorsement Peers
 endorsers:
   - *peer1
   - *peer2
-  # - *peer3
+  - *peer3
 
 # Peer Nodes to interact with as Commit Peers as listening
 committers: 
   - *peer1
   - *peer2
-  # - *peer3
+  - *peer3
 # we might support multi-committer in the future for more complex test scenario.
 # i.e. consider tx committed only if it's done on >50% of nodes. 
 # Give your commit Threshold as numbers for peers here.
@@ -72,14 +52,14 @@ policyFile: ./orLogic.rego
 
 # Invocation configs
 channel: mychannel
-chaincode: performance
+chaincode: supplychain-chaincode
 # chain code args below, in a list of str
 # we provides 3 kinds of randmon
 # uuid
 # randomString$length
 # randomNumber$min_$max
 args:
-  - CreateAsset1
+  - CreateAssetTape
   - uuid
   - randomString8
   - randomNumber0_50
@@ -92,7 +72,3 @@ sign_cert: ../../artifacts/channel/crypto-config/peerOrganizations/org1.example.
 # network traffic control
 num_of_conn: 20
 client_per_conn: 20
-
-# sendRate: 10000  # Transactions per second
-# duration: 10s   # Test duration
-# commitOnly: false
