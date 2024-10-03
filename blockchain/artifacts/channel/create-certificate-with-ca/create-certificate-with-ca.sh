@@ -490,12 +490,12 @@ createConnectionProfile() {
 
 
 
-# removeOldCredentials
-# createcertificatesForOrg1
-# createCertificatesForOrg2
-# createCertificatesForOrg3
+removeOldCredentials
+createcertificatesForOrg1
+createCertificatesForOrg2
+createCertificatesForOrg3
 
-# createCretificatesForOrderer
+createCretificatesForOrderer
 
 createConnectionProfile2
 

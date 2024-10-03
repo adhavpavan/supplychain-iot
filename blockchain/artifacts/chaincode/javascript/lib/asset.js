@@ -70,8 +70,8 @@ class Asset extends Contract {
                   maxValue: shipmentJSON?.shipmentCondition.maxTemperature
               },
               "incidentType": "Temperatrure Breach",
-              "creationTime": eventJSON.timestamp,
-              "closingTime": eventJSON.timestamp,
+              "creationTime": eventJSON.createAt,
+              "closingTime": eventJSON.closingTime,
             }
             // Adding incident
             await ctx.stub.putState(incident.id, Buffer.from(JSON.stringify(incident)))

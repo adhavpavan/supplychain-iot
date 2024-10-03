@@ -80,6 +80,7 @@ const addShipment = async (shipmentData, user) => {
     return shipment;
   } catch (error) {
     console.log(error);
+    throw error
   } finally {
     if (gateway) {
       gateway.close();
@@ -87,6 +88,8 @@ const addShipment = async (shipmentData, user) => {
     if (client) {
       client.close()
     }
+
+    
   }
 };
 
@@ -165,7 +168,7 @@ const sendShipment = async (shipmentData, user) => {
 
     shipmentJSON.comment = shipmentJSON.comment || []
     shipmentJSON.comment.push({
-      title: 'Shipment Sent viw Carrier', 
+      title: 'Shipment Sent via Carrier', 
       description: `Shipment has been sent viw Carrier`,
       createdBy: user.email,
       createAt: dateTime
@@ -176,6 +179,7 @@ const sendShipment = async (shipmentData, user) => {
     return shipmentJSON;
   } catch (error) {
     console.log(error);
+    throw error
   } finally {
     if (gateway) {
       gateway.close();
@@ -234,6 +238,7 @@ const updateShipment = async (shipmentData, user) => {
     return shipmentJSON;
   } catch (error) {
     console.log(error);
+    throw error
   } finally {
     if (gateway) {
       gateway.close();
@@ -275,6 +280,7 @@ const addIOTData = async (iotData, user) => {
       type: iotData.type,
       value: iotData.value,
       createAt: dateTime,
+      closingTime: dateTime
     }
 
     // let ownership = await contract.submitTransaction('', ownershipId)
@@ -282,6 +288,7 @@ const addIOTData = async (iotData, user) => {
     return iotDataJSON;
   } catch (error) {
     console.log(error);
+    throw error
   } finally {
     if (gateway) {
       gateway.close();

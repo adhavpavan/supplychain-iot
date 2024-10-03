@@ -38,7 +38,7 @@ class CreateDeviceWorkload extends WorkloadModuleBase {
             contractId: 'supplychain-chaincode',
             contractVersion: 'v1',
             contractFunction: 'AddIOTEvent',
-            contractArguments: [JSON.stringify(assetData), 'Shipment-8da2dfd3-956'],
+            contractArguments: [JSON.stringify(assetData), 'Shipment-73b520d7-ae6'],
             // invokerIdentity: 'client0.org2.example.com',
             // transientMap
             timeout: 30

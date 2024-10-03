@@ -5,20 +5,20 @@ test:
     number: 5
   rounds:
     - label: Create Asset - Validation Round
-      txNumber: 1
+      txNumber: 1000
       rateControl:
         type: fixed-rate
         opts:
-          tps: 1
+          tps: 100
       workload:
         module: benchmarks/createAsset.js
 
     - label: Query Asset - Node chaincode
       description: Get Asset.
-      txNumber: 1
+      txNumber: 10000
       rateControl:
         type: fixed-rate
         opts:
-          tps: 1
+          tps: 700
       workload:
         module: benchmarks/queryAsset.js

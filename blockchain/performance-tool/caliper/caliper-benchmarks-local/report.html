@@ -158,10 +158,10 @@
                     </tr>
 
                     <tr>
-                         <td>Create Asset - Validation Round</td> <td>5</td> <td>0</td> <td>500.0</td> <td>2.25</td> <td>2.24</td> <td>2.24</td> <td>2.2</td>
+                         <td>Create Asset - Validation Round</td> <td>1000</td> <td>0</td> <td>45.9</td> <td>1.13</td> <td>0.14</td> <td>0.46</td> <td>45.6</td>
                     </tr>
                     <tr>
-                         <td>Query Asset - Node chaincode</td> <td>5</td> <td>0</td> <td>1000.0</td> <td>0.07</td> <td>0.07</td> <td>0.07</td> <td>68.5</td>
+                         <td>Query Asset - Node chaincode</td> <td>10000</td> <td>0</td> <td>146.4</td> <td>0.32</td> <td>0.03</td> <td>0.07</td> <td>146.3</td>
                     </tr>
                 </table>
             </div>
@@ -171,7 +171,7 @@
                 <pre style="overflow: visible;white-space: pre-wrap;max-height:100%;">rateControl:
   type: fixed-rate
   opts:
-    tps: 1
+    tps: 100
 </pre>
                         <h3>Performance metrics for Create Asset - Validation Round</h3>
                             <table style="min-width: 100%;">
@@ -179,7 +179,7 @@
                                      <th>Name</th> <th>Succ</th> <th>Fail</th> <th>Send Rate (TPS)</th> <th>Max Latency (s)</th> <th>Min Latency (s)</th> <th>Avg Latency (s)</th> <th>Throughput (TPS)</th>
                                 </tr>
                                 <tr>
-                                     <td>Create Asset - Validation Round</td> <td>5</td> <td>0</td> <td>500.0</td> <td>2.25</td> <td>2.24</td> <td>2.24</td> <td>2.2</td>
+                                     <td>Create Asset - Validation Round</td> <td>1000</td> <td>0</td> <td>45.9</td> <td>1.13</td> <td>0.14</td> <td>0.46</td> <td>45.6</td>
                                 </tr>
                             </table>
                         <h3>Resource utilization for Create Asset - Validation Round</h3>
@@ -191,7 +191,7 @@
                 <pre style="overflow: visible;white-space: pre-wrap;max-height:100%;">rateControl:
   type: fixed-rate
   opts:
-    tps: 1
+    tps: 700
 </pre>
                         <h3>Performance metrics for Query Asset - Node chaincode</h3>
                             <table style="min-width: 100%;">
@@ -199,7 +199,7 @@
                                      <th>Name</th> <th>Succ</th> <th>Fail</th> <th>Send Rate (TPS)</th> <th>Max Latency (s)</th> <th>Min Latency (s)</th> <th>Avg Latency (s)</th> <th>Throughput (TPS)</th>
                                 </tr>
                                 <tr>
-                                     <td>Query Asset - Node chaincode</td> <td>5</td> <td>0</td> <td>1000.0</td> <td>0.07</td> <td>0.07</td> <td>0.07</td> <td>68.5</td>
+                                     <td>Query Asset - Node chaincode</td> <td>10000</td> <td>0</td> <td>146.4</td> <td>0.32</td> <td>0.03</td> <td>0.07</td> <td>146.3</td>
                                 </tr>
                             </table>
                         <h3>Resource utilization for Query Asset - Node chaincode</h3>
@@ -214,20 +214,20 @@ workers:
   number: 5
 rounds:
   - label: Create Asset - Validation Round
-    txNumber: 1
+    txNumber: 1000
     rateControl:
       type: fixed-rate
       opts:
-        tps: 1
+        tps: 100
     workload:
       module: benchmarks&#x2F;createAsset.js
   - label: Query Asset - Node chaincode
     description: Get Asset.
-    txNumber: 1
+    txNumber: 10000
     rateControl:
       type: fixed-rate
       opts:
-        tps: 1
+        tps: 700
     workload:
       module: benchmarks&#x2F;queryAsset.js
 </pre>
